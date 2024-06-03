@@ -1,4 +1,4 @@
-package br.edu.up;
+package br.edu.up.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

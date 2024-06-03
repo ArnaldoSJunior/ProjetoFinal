@@ -1,6 +1,5 @@
 package br.edu.up.models;
 
-public class Carro {
-    
+public class Mensalista {
 
 }

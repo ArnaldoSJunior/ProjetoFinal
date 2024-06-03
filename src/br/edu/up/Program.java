@@ -1,5 +1,5 @@
 package br.edu.up;
 
-public class App {
+public class Program {
 
 }
