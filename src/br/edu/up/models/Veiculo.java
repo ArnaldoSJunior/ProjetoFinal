@@ -1,5 +1,7 @@
 package br.edu.up.models;
 
-public class Veiculo {
+public abstract class Veiculo {
 
+    private String modelo;
+    private String placa;
 }
