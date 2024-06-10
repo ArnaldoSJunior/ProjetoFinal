@@ -48,10 +48,12 @@ public class Mensalista {
 
     @Override
     public String toString() {
-        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculo= " + veiculo + "]";
+        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculo= " + veiculo
+                + "]";
     }
 
-    
+    public String toCSV() {
+        return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo;
+    }
 
-    
 }
