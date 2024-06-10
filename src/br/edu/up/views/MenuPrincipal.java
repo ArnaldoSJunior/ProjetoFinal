@@ -20,13 +20,17 @@ public class MenuPrincipal {
         do {
             switch (op) {
                 case 1:
-                    Prompt.imprimir("Tipo de veículo?");
+                    Prompt.imprimir("Tipo de veículo:");
                     int tipo = Prompt.lerInteiro("1.Moto 2.Carro 3.Caminhonete 4.Voltar");
+                    
                     if (tipo == 1) {
+                        Prompt.imprimir("Informe a placa da moto:");
 
                     } else if (tipo == 2) {
+                        Prompt.imprimir("Informe a placa do carro:");
 
                     } else if (tipo == 3) {
+                        Prompt.imprimir("Informe a placa da caminhonete:");
 
                     } else if (tipo == 4) {
                         mostrar();
@@ -34,6 +38,7 @@ public class MenuPrincipal {
                     break;
                 case 2:
                     Prompt.imprimir("Informe a placa do veículo!");
+
                     break;
                 case 3:
 
