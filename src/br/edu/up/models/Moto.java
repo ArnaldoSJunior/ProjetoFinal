@@ -1,5 +1,5 @@
 package br.edu.up.models;
 
-public class Moto {
+public class Moto extends Veiculo {
 
 }

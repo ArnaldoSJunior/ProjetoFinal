@@ -1,5 +1,5 @@
 package br.edu.up.models;
 
-public class Caminhonete {
+public class Caminhonete extends Veiculo {
 
 }
