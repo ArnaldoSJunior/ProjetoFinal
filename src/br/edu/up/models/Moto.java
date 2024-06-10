@@ -6,4 +6,11 @@ public class Moto extends Veiculo {
         super(modelo, placa, cor);
     }
 
+    @Override
+    public String toString() {
+        return "Moto [Modelo: " + super.getModelo()
+                + ", Placa: " + super.getPlaca()
+                + ", Cor: " + super.getCor() + " ]";
+    }
+
 }

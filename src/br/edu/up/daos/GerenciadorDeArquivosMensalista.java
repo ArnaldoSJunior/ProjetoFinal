@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import br.edu.up.models.Mensalista;
 
-public class GerenciadorDeArquivos {
+public class GerenciadorDeArquivosMensalista {
 
     private String header = "";
     private String nomeDoArquivoMensalista = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\mensalistas.csv";
