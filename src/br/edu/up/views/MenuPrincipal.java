@@ -80,7 +80,7 @@ public class MenuPrincipal {
 
                     break;
                 case 7:
-
+                    System.out.println(ctrlEstacionamento.listarMensalistas());
                     break;
                 default:
                     break;

@@ -30,27 +30,27 @@ public class ControleEstacionamento {
             Mensalista mensalista = new Mensalista(nome, cpf, telefone, placa);
             if (op == 1) {
                 // Carro
-                Veiculo carro = registrarCarroMensalista(modelo, placa, cor);
+                Carro carro = registrarCarroMensalista(modelo, placa, cor);
                 if (carro != null) {
-                    mensalista.setVeiculo(carro);
+                    mensalista.setCarro(carro);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
                 return "null";
             } else if (op == 2) {
                 // Moto
-                Veiculo moto = registrarMotoMensalista(modelo, placa, cor);
+                Moto moto = registrarMotoMensalista(modelo, placa, cor);
                 if (moto != null) {
-                    mensalista.setVeiculo(moto);
+                    mensalista.setMoto(moto);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
                 return "null";
             } else if (op == 3) {
                 // Caminhonete
-                Veiculo caminhonete = registrarCaminhoneteMensalista(modelo, placa, cor);
+                Caminhonete caminhonete = registrarCaminhoneteMensalista(modelo, placa, cor);
                 if (caminhonete != null) {
-                    mensalista.setVeiculo(caminhonete);
+                    mensalista.setCaminhonete(caminhonete);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
@@ -96,6 +96,14 @@ public class ControleEstacionamento {
             return caminhonete;
         }
         return null;
+    }
+
+    public String listarMensalistas() {
+        if (mensalistas.size() == 0) {
+            return "Não há mensalistas cadastrados!";
+        } else {
+            return mensalistas.toString();
+        }
     }
 
 }

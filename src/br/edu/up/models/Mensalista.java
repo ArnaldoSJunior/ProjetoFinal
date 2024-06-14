@@ -4,7 +4,10 @@ public class Mensalista {
     private String nome;
     private String cpf;
     private String telefone;
-    private Veiculo veiculo;
+    private Carro carro;
+    private Moto moto;
+    private Caminhonete caminhonete;
+    // private Veiculo veiculo;
     private String placaVeiculo;
 
     public Mensalista(String nome, String cpf, String telefone, String placaVeiculo) {
@@ -48,20 +51,37 @@ public class Mensalista {
 
     @Override
     public String toString() {
-        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculo= " + veiculo
-                + "]";
+        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculos= " + "Carro= "
+                + carro + ", Moto= " + moto + ", Caminhonete= " + caminhonete
+                + "]\n";
     }
 
     public String toCSV() {
         return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo;
     }
 
-    public Veiculo getVeiculo() {
-        return veiculo;
+    public Carro getCarro() {
+        return carro;
     }
 
-    public void setVeiculo(Veiculo veiculo) {
-        this.veiculo = veiculo;
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+
+    public Moto getMoto() {
+        return moto;
+    }
+
+    public void setMoto(Moto moto) {
+        this.moto = moto;
+    }
+
+    public Caminhonete getCaminhonete() {
+        return caminhonete;
+    }
+
+    public void setCaminhonete(Caminhonete caminhonete) {
+        this.caminhonete = caminhonete;
     }
 
 }
