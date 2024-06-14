@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import br.edu.up.models.Carro;
 
-public class GerenciadorDeCarro {
+public class GerenciadorDeArquivosCarro {
     
     private String header = "Placa;Modelo;Cor";
     private String nomeDoArquivoCarro = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\carros.csv";
