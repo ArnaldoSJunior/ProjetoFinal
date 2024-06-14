@@ -56,4 +56,12 @@ public class Mensalista {
         return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo;
     }
 
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
+
 }

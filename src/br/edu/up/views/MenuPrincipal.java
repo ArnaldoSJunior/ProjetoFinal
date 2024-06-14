@@ -53,11 +53,21 @@ public class MenuPrincipal {
                     break;
                 case 4:
                     System.out.println("--- Incluir Mensalistas ---");
+                    int opcao = Prompt.lerInteiro("Digite o tipo de veículp: (1-Carro/ 2-Moto/ 3-Caminhonete)");
+                    if (opcao != 1 && opcao != 2 && opcao != 3) {
+                        System.out.println("Opção de veículo inválido!!");
+                        break;
+
+                    }
                     String nome = Prompt.lerLinha("Digite o nome: ");
                     String cpf = Prompt.lerLinha("Digite o seu CPF");
                     String telefone = Prompt.lerLinha("Digite o seu telefone: ");
-                    String placa = Prompt.lerLinha("Digite a placa do seu veículo: ");
-                    if (ctrlEstacionamento.criarMensalista(nome, cpf, telefone, placa).equals("ok")) {
+                    System.out.println("--- Incluir Carro de Mensalista ---");
+                    String modeloVeiculo = Prompt.lerLinha("Digite o modelo do veículo: ");
+                    String placa = Prompt.lerLinha("Digite o placa do veículo: ");
+                    String cor = Prompt.lerLinha("Digite a cor da veículo: ");
+                    if (ctrlEstacionamento.criarMensalista(opcao, nome, cpf, telefone, modeloVeiculo, placa, cor)
+                            .equals("ok")) {
                         System.out.println("Mensalista adicionado com sucesso!!");
                     } else {
                         System.out.println("Falha ao adicionar mensalista!!");
@@ -72,18 +82,31 @@ public class MenuPrincipal {
                 case 7:
 
                     break;
-                case 8:
-                    System.exit(0);
-                    break;
-
                 default:
                     break;
 
             }
+            Prompt.imprimir("------------------MENU PRINCIPAL------------------");
+            Prompt.separador();
+            Prompt.imprimir("1.Registrar entrada:");
+            Prompt.imprimir("2.Registrar saída:");
+            Prompt.imprimir("3.Verificar vagas:");
+            Prompt.imprimir("4.Incluir mensalista:");
+            Prompt.imprimir("5.Excluir mensalista:");
+            Prompt.imprimir("6.Emitir relatório diário:");
+            Prompt.imprimir("7.Emitir relatório mensalistas:");
+            Prompt.imprimir("8.Sair");
 
-            mostrar();
+            op = Prompt.lerInteiro();
 
         } while (op != 8);
+
+        if (ctrlEstacionamento.gravarMensalista()) {
+            System.out.println("Dados gravador com sucesso!");
+        } else {
+            System.out.println("Falha ao gravar dados!");
+        }
+        System.out.println("Programa encerrado");
 
     }
 }
