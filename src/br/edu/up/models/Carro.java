@@ -6,7 +6,7 @@ public class Carro extends Veiculo {
         super(modelo, placa, cor);
     }
 
-    
+    @Override
     public String toString() {
         return "Carro [Modelo: " + super.getModelo()
                 + ", Placa: " + super.getPlaca()
