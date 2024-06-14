@@ -6,11 +6,16 @@ public class Carro extends Veiculo {
         super(modelo, placa, cor);
     }
 
-    @Override
+    
     public String toString() {
         return "Carro [Modelo: " + super.getModelo()
                 + ", Placa: " + super.getPlaca()
                 + ", Cor: " + super.getCor() + " ]";
+    }
+
+
+    public String toCSV() {
+        return getPlaca() + ";" + getModelo() + ";" + getCor();
     }
 
 }

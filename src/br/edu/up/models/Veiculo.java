@@ -3,7 +3,7 @@ package br.edu.up.models;
 public abstract class Veiculo {
 
     private String modelo;
-    private String placa;
+    protected String placa;
     private String cor;
 
     public Veiculo(String modelo, String placa, String cor) {
