@@ -32,7 +32,8 @@ public class ControleEstacionamento {
                 // Carro
                 Carro carro = registrarCarroMensalista(modelo, placa, cor);
                 if (carro != null) {
-                    mensalista.setCarro(carro);
+                    mensalista.setVeiculoCarro(carro);
+                    mensalista.setTipoVeiculo(1);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
@@ -41,7 +42,8 @@ public class ControleEstacionamento {
                 // Moto
                 Moto moto = registrarMotoMensalista(modelo, placa, cor);
                 if (moto != null) {
-                    mensalista.setMoto(moto);
+                    mensalista.setVeiculoMoto(moto);
+                    mensalista.setTipoVeiculo(2);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
@@ -50,7 +52,8 @@ public class ControleEstacionamento {
                 // Caminhonete
                 Caminhonete caminhonete = registrarCaminhoneteMensalista(modelo, placa, cor);
                 if (caminhonete != null) {
-                    mensalista.setCaminhonete(caminhonete);
+                    mensalista.setVeiculoCaminhonete(caminhonete);
+                    mensalista.setTipoVeiculo(3);
                     incluirMensalistaLista(mensalista);
                     return "ok";
                 }
@@ -105,5 +108,11 @@ public class ControleEstacionamento {
             return mensalistas.toString();
         }
     }
+
+    public List<Mensalista> getListaMensalistas() {
+        return mensalistas;
+    }
+
+    
 
 }

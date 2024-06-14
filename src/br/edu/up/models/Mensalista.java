@@ -4,11 +4,12 @@ public class Mensalista {
     private String nome;
     private String cpf;
     private String telefone;
-    private Carro carro;
-    private Moto moto;
-    private Caminhonete caminhonete;
-    // private Veiculo veiculo;
+    // private Carro carro;
+    // private Moto moto;
+    // private Caminhonete caminhonete;
+    private Veiculo veiculo;
     private String placaVeiculo;
+    private int tipoVeiculo;
 
     public Mensalista(String nome, String cpf, String telefone, String placaVeiculo) {
         this.nome = nome;
@@ -49,39 +50,58 @@ public class Mensalista {
         this.placaVeiculo = placaVeiculo;
     }
 
+    // @Override
+    // public String toString() {
+    //     return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculos= " + "Carro= "
+    //             + carro + ", Moto= " + moto + ", Caminhonete= " + caminhonete
+    //             + "]\n";
+    // }
     @Override
     public String toString() {
-        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculos= " + "Carro= "
-                + carro + ", Moto= " + moto + ", Caminhonete= " + caminhonete
+        return "Mensalista [nome= " + nome + ", cpf= " + cpf + ", telefone= " + telefone + ", Veiculos= " +veiculo
                 + "]\n";
     }
 
-    public String toCSV() {
-        return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo;
+    public String toCSVcarro() {
+        return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo+ ";" +veiculo.getModelo()+ ";" +veiculo.getCor()+ ";" + tipoVeiculo;
     }
 
-    public Carro getCarro() {
-        return carro;
+    public String toCSVmoto(){
+        return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo+";"+veiculo.getModelo()+";"+veiculo.getCor()+";"+tipoVeiculo;
     }
 
-    public void setCarro(Carro carro) {
-        this.carro = carro;
+    public String toCSVcaminhonete(){
+        return nome + ";" + cpf + ";" + telefone + ";" + placaVeiculo+";"+veiculo.getModelo()+";"+veiculo.getCor()+";"+tipoVeiculo;
     }
 
-    public Moto getMoto() {
-        return moto;
+    public Veiculo getVeiculo() {
+        return veiculo;
     }
 
-    public void setMoto(Moto moto) {
-        this.moto = moto;
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
     }
 
-    public Caminhonete getCaminhonete() {
-        return caminhonete;
+    public void setVeiculoCarro(Carro carro){
+        this.veiculo = carro;
     }
 
-    public void setCaminhonete(Caminhonete caminhonete) {
-        this.caminhonete = caminhonete;
+    public void setVeiculoMoto(Moto moto){
+        this.veiculo = moto;
     }
+
+    public void setVeiculoCaminhonete(Caminhonete caminhonete){
+        this.veiculo = caminhonete;
+    }
+
+    public int getTipoVeiculo() {
+        return tipoVeiculo;
+    }
+
+    public void setTipoVeiculo(int tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
+    }
+
+    
 
 }

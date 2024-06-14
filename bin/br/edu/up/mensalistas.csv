@@ -1,2 +1,3 @@
-nome;cpf;telefone;placaVeiculo
-
+nome;cpf;telefone;placaVeiculo;modelo;cor;tipo
+Yasmim;35351636;57537742;111-aaaa;Honda Fit;Preto;1
+Migas;541355;135315;555;Honda Civic;Preto;1
