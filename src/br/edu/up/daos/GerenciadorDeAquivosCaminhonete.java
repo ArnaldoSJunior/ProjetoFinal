@@ -30,11 +30,11 @@ public class GerenciadorDeAquivosCaminhonete {
                 String linha = leitorCaminhonete.nextLine();
                 String[] dados = linha.split(";");
 
-                String placa = dados[0];
-                String modelo = dados[1];
+                String modelo = dados[0];
+                String placa = dados[1];
                 String cor = dados[2];
 
-              Caminhonete caminhonete = new Caminhonete(placa, modelo, cor);
+              Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
                 caminhonetes.add(caminhonete);
             }
             leitorCaminhonete.close();
