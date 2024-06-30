@@ -86,16 +86,7 @@ public class MenuPrincipal {
                     break;
 
             }
-            Prompt.imprimir("------------------MENU PRINCIPAL------------------");
-            Prompt.separador();
-            Prompt.imprimir("1.Registrar entrada:");
-            Prompt.imprimir("2.Registrar saída:");
-            Prompt.imprimir("3.Verificar vagas:");
-            Prompt.imprimir("4.Incluir mensalista:");
-            Prompt.imprimir("5.Excluir mensalista:");
-            Prompt.imprimir("6.Emitir relatório diário:");
-            Prompt.imprimir("7.Emitir relatório mensalistas:");
-            Prompt.imprimir("8.Sair");
+             mostrar();
 
             op = Prompt.lerInteiro();
 
@@ -108,5 +99,9 @@ public class MenuPrincipal {
         }
         System.out.println("Programa encerrado");
 
-    }
+ }
+public void gravarCaminhonete(){
+   
+}
+
 }

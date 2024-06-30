@@ -6,11 +6,18 @@ public class Caminhonete extends Veiculo {
         super(modelo, placa, cor);
     }
 
+
+
+    
     @Override
     public String toString() {
         return "Caminhonete [Modelo: " + super.getModelo()
                 + ", Placa: " + super.getPlaca()
                 + ", Cor: " + super.getCor() + " ]";
+    }
+    
+    public String toCSV() {
+        return getModelo() + ";" +  getPlaca() + ";" + getCor();
     }
 
 }
