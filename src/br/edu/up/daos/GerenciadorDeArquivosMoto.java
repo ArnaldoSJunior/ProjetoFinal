@@ -2,22 +2,26 @@ package br.edu.up.daos;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import br.edu.up.models.Carro;
+import br.edu.up.models.Mensalista;
 import br.edu.up.models.Moto;
 
 public class GerenciadorDeArquivosMoto {
     private String header = "";
-    private String nomeDoArquivoCaminhonete = "G:\\java\\ProjetoFinal\\src\\br\\edu\\up\\motos.csv";
+    private String nomeDoArquivoMoto= "G:\\java\\ProjetoFinal\\src\\br\\edu\\up\\motos.csv";
 
     public List<Moto> getMoto(){
         List<Moto> motos = new ArrayList<>();
 
         try {
 
-            File arquivoLeituraMoto = new File(nomeDoArquivoCaminhonete);
+            File arquivoLeituraMoto = new File(nomeDoArquivoMoto);
             Scanner leitorMoto = new Scanner(arquivoLeituraMoto);
 
             if (leitorMoto.hasNextLine()) {
@@ -43,6 +47,28 @@ public class GerenciadorDeArquivosMoto {
         }
 
         return motos;
+    }
+
+    public boolean gravarMoto(List<Moto> motos) {
+        
+        boolean arquivoExiste = new File(nomeDoArquivoMoto).exists();
+        
+        try {
+            FileWriter arquivoGravar = new FileWriter(nomeDoArquivoMoto);
+            PrintWriter gravador = new PrintWriter(arquivoGravar);
+
+            gravador.println(header);
+            for (Moto moto : motos) {
+                gravador.println(moto.toCSV());
+            }
+
+            gravador.close();
+
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro ao gravar arquivo: " + e.getMessage());
+            return false;
+        }
     }
 }
     
