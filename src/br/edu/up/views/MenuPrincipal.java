@@ -55,7 +55,9 @@ public class MenuPrincipal {
                     break;
                 case 3:
                     System.out.println("Vagas disponíveis: ");
-                    int vagaDisponivel = 0;
+                    int vagasDisponiveis = ctrlEstacionamento.contarVagasDisponiveis();
+                    System.out.println("--- Vagas Disponíveis ---");
+                    System.out.println("Vagas: " + vagasDisponiveis);
                     break;
                 case 4:
                     System.out.println("--- Incluir Mensalistas ---");
