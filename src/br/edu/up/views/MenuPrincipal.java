@@ -37,7 +37,7 @@ public class MenuPrincipal {
                         Prompt.imprimir("Informe a placa do carro:");
 
                     } else if (tipo == 3) {
-                        Prompt.imprimir("Informe a placa da caminhonete:");
+                        registrarCaminhonete();
 
                     } else if (tipo == 4) {
                         mostrar();
@@ -86,7 +86,7 @@ public class MenuPrincipal {
                     break;
 
             }
-             mostrar();
+            mostrar();
 
             op = Prompt.lerInteiro();
 
@@ -99,9 +99,21 @@ public class MenuPrincipal {
         }
         System.out.println("Programa encerrado");
 
- }
-public void gravarCaminhonete(){
-   
-}
+    }
+
+    private void registrarCaminhonete() {
+
+        Prompt.imprimir("- - - - - -caminhonete- - - - - -");
+
+        String modelo = Prompt.lerLinha("Modelo:");
+        String placa = Prompt.lerLinha("Placa:");
+        String cor = Prompt.lerLinha("Cor:");
+        if (ctrlEstacionamento.incluirCaminhonete(modelo, placa, cor).equals("ok")) {
+            Prompt.imprimir("Caminhonete estacionada!");
+        } else {
+            Prompt.imprimir("Não há vagas");
+        }
+
+    }
 
 }

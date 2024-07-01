@@ -1,9 +1,11 @@
 package br.edu.up.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.up.daos.*;
 import br.edu.up.models.*;
+import br.edu.up.util.Prompt;
 
 public class ControleEstacionamento {
 
@@ -113,6 +115,23 @@ public class ControleEstacionamento {
         return mensalistas;
     }
 
-    
+    public String incluirCaminhonete(String modelo, String placa, String cor) {
+
+        int vaga = est.encontrarVagaDisponivel();
+
+        if (vaga != -1) {
+
+            Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
+            List<Caminhonete> caminhonetes = new ArrayList<>();
+
+            if (caminhonetes == null) {
+                caminhonetes = new ArrayList<>();
+            }
+            caminhonetes.add(caminhonete);
+            return "ok";
+        }
+        return "null";
+
+    }
 
 }
