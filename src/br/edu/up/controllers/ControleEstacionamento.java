@@ -145,5 +145,19 @@ public class ControleEstacionamento {
         return "null";
 
     }
+    public String incluirCarro(String modelo, String placa, String cor) {
+
+        int vaga = est.encontrarVagaDisponivel();
+
+        if (vaga != -1) {
+
+            Carro carro = new Carro(modelo, placa, cor);
+            List<Carro> carros = new ArrayList<>();
+            carros.add(carro);
+            return "ok";
+        }
+        return "null";
+
+    }
 
 }
