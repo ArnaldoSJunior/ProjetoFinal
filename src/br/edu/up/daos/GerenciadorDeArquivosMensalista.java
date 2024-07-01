@@ -16,7 +16,7 @@ import br.edu.up.models.*;
 public class GerenciadorDeArquivosMensalista {
 
     private String header = "";
-    private String nomeDoArquivoMensalista = "C:\\Users\\Casa\\Documents\\Estudos-Programação\\ProjetoFinal\\src\\br\\edu\\up\\mensalistas.csv";
+    private String nomeDoArquivoMensalista = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\mensalistas.csv";
 
     public List<Mensalista> getMensalista() {
 
@@ -76,21 +76,21 @@ public class GerenciadorDeArquivosMensalista {
 
     public boolean gravarMensalista(List<Mensalista> mensalistas) {
         boolean arquivoExiste = new File(nomeDoArquivoMensalista).exists();
-        
+
         try {
             FileWriter arquivoGravar = new FileWriter(nomeDoArquivoMensalista, true); // Modo apêndice
             PrintWriter gravador = new PrintWriter(arquivoGravar);
-    
+
             // Escrever cabeçalho apenas se o arquivo não existir ou estiver vazio
             if (!arquivoExiste || new File(nomeDoArquivoMensalista).length() == 0) {
                 gravador.println(header);
             }
-    
+
             for (Mensalista mensalista : mensalistas) {
                 String linhaTXTcarro = mensalista.toCSVcarro();
                 String linhaTXTmoto = mensalista.toCSVmoto();
                 String linhaTXTcaminhonete = mensalista.toCSVcaminhonete();
-    
+
                 if (mensalista.getTipoVeiculo() == 1) {
                     gravador.println(linhaTXTcarro);
                 } else if (mensalista.getTipoVeiculo() == 2) {
@@ -99,16 +99,15 @@ public class GerenciadorDeArquivosMensalista {
                     gravador.println(linhaTXTcaminhonete);
                 }
             }
-    
+
             gravador.close();
-    
+
             return true;
-    
+
         } catch (Exception e) {
             System.out.println("Erro ao gravar arquivo: " + e.getMessage());
             return false;
         }
     }
-    
-    
+
 }

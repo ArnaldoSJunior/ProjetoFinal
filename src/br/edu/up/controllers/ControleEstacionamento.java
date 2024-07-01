@@ -14,6 +14,8 @@ public class ControleEstacionamento {
     Estacionamento est = new Estacionamento();
     private GerenciadorDeArquivosMensalista gArquivosMensalista = new GerenciadorDeArquivosMensalista();
     private GerenciadorDeArquivosCarro gArquivosCarro = new GerenciadorDeArquivosCarro();
+    private GerenciadorDeAquivosCaminhonete gArquivosCaminhonete = new GerenciadorDeAquivosCaminhonete();
+    private GerenciadorDeArquivosMoto gArquivosMoto = new GerenciadorDeArquivosMoto();
     private List<Mensalista> mensalistas;
     private List<Carro> carros;
     private List<Moto> motos;
@@ -22,6 +24,8 @@ public class ControleEstacionamento {
     public ControleEstacionamento() {
         this.mensalistas = gArquivosMensalista.getMensalista();
         this.carros = gArquivosCarro.getCarros();
+        this.motos = gArquivosMoto.getMoto();
+        this.caminhonetes = gArquivosCaminhonete.getCaminhonete();
     }
 
     public String criarMensalista(int op, String nome, String cpf, String telefone, String modelo, String placa,
@@ -67,6 +71,16 @@ public class ControleEstacionamento {
 
     }
 
+    public String excluirMensalista(String cpf) {
+        Mensalista acharMensalista = mensalistas.stream().filter(x -> x.getCpf() == cpf).findFirst().orElse(null);
+        if (acharMensalista != null) {
+            mensalistas.remove(acharMensalista);
+            return "ok";
+
+        }
+        return "null;";
+    }
+
     public void incluirMensalistaLista(Mensalista mensalista) {
         this.mensalistas.add(mensalista);
     }
@@ -98,6 +112,7 @@ public class ControleEstacionamento {
                 .orElse(null);
         if (acharCaminhonete == null) {
             Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
+            caminhonetes.add(caminhonete);
             return caminhonete;
         }
         return null;
