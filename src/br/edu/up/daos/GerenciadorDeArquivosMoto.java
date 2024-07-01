@@ -14,9 +14,9 @@ import br.edu.up.models.Moto;
 
 public class GerenciadorDeArquivosMoto {
     private String header = "";
-    private String nomeDoArquivoMoto= "G:\\java\\ProjetoFinal\\src\\br\\edu\\up\\motos.csv";
+    private String nomeDoArquivoMoto = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\motos.csv";
 
-    public List<Moto> getMoto(){
+    public List<Moto> getMoto() {
         List<Moto> motos = new ArrayList<>();
 
         try {
@@ -36,23 +36,23 @@ public class GerenciadorDeArquivosMoto {
                 String modelo = dados[1];
                 String cor = dados[2];
 
-              Moto moto = new Moto(modelo, placa, cor);
+                Moto moto = new Moto(modelo, placa, cor);
                 motos.add(moto);
             }
 
             leitorMoto.close();
 
         } catch (FileNotFoundException e) {
-            
+
         }
 
         return motos;
     }
 
     public boolean gravarMoto(List<Moto> motos) {
-        
+
         boolean arquivoExiste = new File(nomeDoArquivoMoto).exists();
-        
+
         try {
             FileWriter arquivoGravar = new FileWriter(nomeDoArquivoMoto);
             PrintWriter gravador = new PrintWriter(arquivoGravar);
@@ -71,6 +71,3 @@ public class GerenciadorDeArquivosMoto {
         }
     }
 }
-    
-    
-    

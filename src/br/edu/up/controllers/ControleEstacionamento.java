@@ -89,6 +89,18 @@ public class ControleEstacionamento {
         return gArquivosMensalista.gravarMensalista(mensalistas);
     }
 
+    public boolean gravarMoto() {
+        return gArquivosMoto.gravarMoto(motos);
+    }
+
+    public boolean gravarCarro() {
+        return gArquivosCarro.gravarCarros(carros);
+    }
+
+    public boolean gravarCaminhonete() {
+        return gArquivosCaminhonete.gravarCaminhonete(caminhonetes);
+    }
+
     public Carro registrarCarroMensalista(String modelo, String placa, String cor) {
         Carro acharCarro = carros.stream().filter(x -> x.getPlaca() == placa).findFirst().orElse(null);
         if (acharCarro == null) {
@@ -139,6 +151,7 @@ public class ControleEstacionamento {
 
             Moto moto = new Moto(modelo, placa, cor);
             motos.add(moto);
+            est.getVagas(vaga).ocuparVaga(placa, modelo, cor, 1);
             return "ok";
         }
         return "null";
@@ -153,6 +166,7 @@ public class ControleEstacionamento {
 
             Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
             caminhonetes.add(caminhonete);
+            est.getVagas(vaga).ocuparVaga(placa, modelo, cor, 3);
             return "ok";
         }
         return "null";
@@ -167,6 +181,7 @@ public class ControleEstacionamento {
 
             Carro carro = new Carro(modelo, placa, cor);
             carros.add(carro);
+            est.getVagas(vaga).ocuparVaga(placa, modelo, cor, 2);
             return "ok";
         }
         return "null";
@@ -238,6 +253,10 @@ public class ControleEstacionamento {
         }
         return "OFF"; // Retorna "OFF" se a placa não for encontrada ou se a vaga não estiver ocupada
                       // por esse veículo
+    }
+
+    public Estacionamento getEst() {
+        return est;
     }
 
 }

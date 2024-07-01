@@ -14,7 +14,7 @@ import br.edu.up.models.Carro;
 public class GerenciadorDeAquivosCaminhonete {
 
     private String header = "";
-    private String nomeDoArquivoCaminhonete = "G:\\java\\ProjetoFinal\\src\\br\\edu\\up\\caminhonetes.csv";
+    private String nomeDoArquivoCaminhonete = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\caminhonetes.csv";
 
     public List<Caminhonete> getCaminhonete() {
 
@@ -47,7 +47,7 @@ public class GerenciadorDeAquivosCaminhonete {
         return caminhonetes;
     }
 
-    public boolean gravarCarros(List<Caminhonete> caminhonetes) {
+    public boolean gravarCaminhonete(List<Caminhonete> caminhonetes) {
         try {
             FileWriter arquivoGravar = new FileWriter(nomeDoArquivoCaminhonete);
             PrintWriter gravador = new PrintWriter(arquivoGravar);

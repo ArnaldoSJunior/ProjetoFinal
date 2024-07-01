@@ -103,17 +103,28 @@ public class MenuPrincipal {
                     System.out.println("Total: R$ " + ctrlEstacionamento.relatorioMensalista());
 
                     break;
+                case 8:
+                    if (ctrlEstacionamento.gravarMensalista() && ctrlEstacionamento.gravarMoto()
+                            && ctrlEstacionamento.gravarCarro()
+                            && ctrlEstacionamento.gravarCaminhonete()) {
+                        System.out.println("Dados gravador com sucesso!");
+                    } else {
+                        System.out.println("Falha ao gravar dados!");
+                    }
+                    System.out.println("Programa encerrado");
+                    break;
                 default:
                     break;
 
             }
             mostrar();
 
-            op = Prompt.lerInteiro();
+            // op = Prompt.lerInteiro();
 
         } while (op != 8);
 
-        if (ctrlEstacionamento.gravarMensalista()) {
+        if (ctrlEstacionamento.gravarMensalista() && ctrlEstacionamento.gravarMoto() && ctrlEstacionamento.gravarCarro()
+                && ctrlEstacionamento.gravarCaminhonete()) {
             System.out.println("Dados gravador com sucesso!");
         } else {
             System.out.println("Falha ao gravar dados!");
