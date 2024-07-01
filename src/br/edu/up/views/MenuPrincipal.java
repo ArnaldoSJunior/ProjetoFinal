@@ -84,10 +84,16 @@ public class MenuPrincipal {
 
                     break;
                 case 6:
-
+                    ctrlEstacionamento.finalizarPeriodo();
+                    System.out.println("\n------------ Relatório da Manhã --------------");
+                    System.out.println("Quantidade de entradas: " + ctrlEstacionamento.getContEntrada());
+                    System.out.println("Total: R$" + ctrlEstacionamento.finalizarPeriodo());
                     break;
                 case 7:
+                    System.out.println("--- Relatorio de Mensalista ---");
                     System.out.println(ctrlEstacionamento.listarMensalistas());
+                    System.out.println("Total: R$ " + ctrlEstacionamento.relatorioMensalista());
+
                     break;
                 default:
                     break;
@@ -116,6 +122,7 @@ public class MenuPrincipal {
         String placa = Prompt.lerLinha("Placa:");
         String cor = Prompt.lerLinha("Cor:");
         if (ctrlEstacionamento.incluirCaminhonete(modelo, placa, cor).equals("ok")) {
+            ctrlEstacionamento.setContEntrada(ctrlEstacionamento.getContEntrada() + 1);
             Prompt.imprimir("Caminhonete estacionada!");
         } else {
             Prompt.imprimir("Não há vagas");

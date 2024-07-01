@@ -138,12 +138,64 @@ public class ControleEstacionamento {
         if (vaga != -1) {
 
             Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
-            List<Caminhonete> caminhonetes = new ArrayList<>();
             caminhonetes.add(caminhonete);
             return "ok";
         }
         return "null";
 
     }
+
+    public int contarVagasDisponiveis() {
+        int contador = 0;
+        for (Vaga vaga : est.getVagas()) {
+            if (!vaga.ocupada()) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public int consultarVaga(String placa) {
+        for (int i = 0; i < 10; i++) {
+            if (est.getVagas(i).getCarroPlaca().equals(placa)) {
+                return est.getVagas(i).getNumero();
+            }
+
+        }
+        return 0;
+    }
+
+    public Double finalizarPeriodo() {
+        double carrosValor = (int) (carros.size() * 5.00);
+        double motosValor = (int) (motos.size() * 3.00);
+        double caminhoneteValor = (int) (caminhonetes.size() * 10.00);
+        Double valorFinal = carrosValor + motosValor + caminhoneteValor;
+        return valorFinal;
+    }
+
+    public Double relatorioMensalista() {
+        double valorMensalista = (int) mensalistas.size() * 150.00;
+        return valorMensalista;
+    }
+
+    public int getContEntrada() {
+        return contEntrada;
+    }
+
+    public void setContEntrada(int contEntrada) {
+        this.contEntrada = contEntrada;
+    }
+
+    // public boolean validarPlaca(String placa){
+    // String[] partes = placa.split("-");
+    // if(partes.length != 2 || partes[0].length() != 3) {
+    // return false;
+    // }
+    // // Verifica se a segunda parte consiste apenas em dígitos ou letras
+    // if (!partes[1].matches("[0-9a-zA-Z]+")) {
+    // return false;
+    // }
+    // return true;
+    // }
 
 }
