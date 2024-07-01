@@ -28,12 +28,13 @@ public class GerenciadorDeArquivosMoto {
                 header = leitorMoto.nextLine();
             }
 
+            leitorMoto.nextLine();
             while (leitorMoto.hasNextLine()) {
                 String linha = leitorMoto.nextLine();
                 String[] dados = linha.split(";");
 
-                String placa = dados[1];
-                String modelo = dados[0];
+                String placa = dados[0];
+                String modelo = dados[1];
                 String cor = dados[2];
 
                 Moto moto = new Moto(modelo, placa, cor);

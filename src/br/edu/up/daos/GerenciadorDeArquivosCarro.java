@@ -11,7 +11,7 @@ import java.util.Scanner;
 import br.edu.up.models.Carro;
 
 public class GerenciadorDeArquivosCarro {
-    
+
     private String header = "Placa;Modelo;Cor";
     private String nomeDoArquivoCarro = "C:\\Users\\autologon\\Documents\\ProjetoFinal\\src\\br\\edu\\up\\carros.csv";
 
@@ -27,12 +27,13 @@ public class GerenciadorDeArquivosCarro {
                 header = leitorCarro.nextLine();
             }
 
+            leitorCarro.nextLine();
             while (leitorCarro.hasNextLine()) {
                 String linha = leitorCarro.nextLine();
                 String[] dados = linha.split(";");
 
-                String placa = dados[1];
-                String modelo = dados[0];
+                String modelo = dados[1];
+                String placa = dados[0];
                 String cor = dados[2];
 
                 Carro carro = new Carro(placa, modelo, cor);

@@ -93,7 +93,7 @@ public class MenuPrincipal {
                     break;
                 case 6:
                     ctrlEstacionamento.finalizarPeriodo();
-                    System.out.println("\n------------ Relatório da Manhã --------------");
+                    System.out.println("\n------------ Relatório --------------");
                     System.out.println("Quantidade de entradas: " + ctrlEstacionamento.getContEntrada());
                     System.out.println("Total: R$" + ctrlEstacionamento.finalizarPeriodo());
                     break;

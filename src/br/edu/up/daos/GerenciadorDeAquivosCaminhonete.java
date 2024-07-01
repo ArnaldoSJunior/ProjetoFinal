@@ -28,6 +28,8 @@ public class GerenciadorDeAquivosCaminhonete {
                 header = leitorCaminhonete.nextLine();
             }
 
+            // leitorCaminhonete.nextLine();
+
             while (leitorCaminhonete.hasNextLine()) {
                 String linha = leitorCaminhonete.nextLine();
                 String[] dados = linha.split(";");
