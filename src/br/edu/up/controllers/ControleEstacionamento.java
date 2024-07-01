@@ -131,6 +131,20 @@ public class ControleEstacionamento {
         return mensalistas;
     }
 
+    public String incluirMoto(String modelo, String placa, String cor) {
+
+        int vaga = est.encontrarVagaDisponivel();
+
+        if (vaga != -1) {
+
+            Moto moto = new Moto(modelo, placa, cor);
+            motos.add(moto);
+            return "ok";
+        }
+        return "null";
+
+    }
+
     public String incluirCaminhonete(String modelo, String placa, String cor) {
 
         int vaga = est.encontrarVagaDisponivel();
@@ -138,7 +152,6 @@ public class ControleEstacionamento {
         if (vaga != -1) {
 
             Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
-            List<Caminhonete> caminhonetes = new ArrayList<>();
             caminhonetes.add(caminhonete);
             return "ok";
         }
@@ -152,7 +165,6 @@ public class ControleEstacionamento {
         if (vaga != -1) {
 
             Carro carro = new Carro(modelo, placa, cor);
-            List<Carro> carros = new ArrayList<>();
             carros.add(carro);
             return "ok";
         }

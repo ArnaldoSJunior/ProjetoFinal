@@ -107,6 +107,21 @@ public class MenuPrincipal {
         System.out.println("Programa encerrado");
 
     }
+    
+    private void registrarMoto() {
+
+        Prompt.imprimir("- - - - - -moto- - - - - -");
+
+        String modelo = Prompt.lerLinha("Modelo:");
+        String placa = Prompt.lerLinha("Placa:");
+        String cor = Prompt.lerLinha("Cor:");
+        if (ctrlEstacionamento.incluirMoto(modelo, placa, cor).equals("ok")) {
+            Prompt.imprimir("Moto estacionada!");
+        } else {
+            Prompt.imprimir("Não há vagas");
+        }
+
+    }
 
     private void registrarCaminhonete() {
 
