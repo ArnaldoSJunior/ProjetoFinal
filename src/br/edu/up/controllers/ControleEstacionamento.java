@@ -69,6 +69,16 @@ public class ControleEstacionamento {
 
     }
 
+    public String excluirMensalista(String cpf) {
+        Mensalista acharMensalista = mensalistas.stream().filter(x -> x.getCpf() == cpf).findFirst().orElse(null);
+        if (acharMensalista != null) {
+            mensalistas.remove(acharMensalista);
+            return "ok";
+
+        }
+        return "null;";
+    }
+
     public void incluirMensalistaLista(Mensalista mensalista) {
         this.mensalistas.add(mensalista);
     }
@@ -100,6 +110,7 @@ public class ControleEstacionamento {
                 .orElse(null);
         if (acharCaminhonete == null) {
             Caminhonete caminhonete = new Caminhonete(modelo, placa, cor);
+            caminhonetes.add(caminhonete);
             return caminhonete;
         }
         return null;

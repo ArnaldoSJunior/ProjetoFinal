@@ -74,6 +74,13 @@ public class MenuPrincipal {
                     }
                     break;
                 case 5:
+                    System.out.println("--- Excluir Mensalista ---");
+                    String cpfMensalista = Prompt.lerLinha("Digite o CPF do mensalista");
+                    if (ctrlEstacionamento.excluirMensalista(cpfMensalista).equals("ok")) {
+                        System.out.println("Mensalista excluído com sucesso!!");
+                    } else {
+                        System.out.println("Falha ao excluir mensalista!!");
+                    }
 
                     break;
                 case 6:
@@ -86,9 +93,7 @@ public class MenuPrincipal {
                     break;
 
             }
-             mostrar();
-
-            op = Prompt.lerInteiro();
+            mostrar();
 
         } while (op != 8);
 
@@ -99,9 +104,10 @@ public class MenuPrincipal {
         }
         System.out.println("Programa encerrado");
 
- }
-public void gravarCaminhonete(){
-   
-}
+    }
+
+    public void gravarCaminhonete() {
+
+    }
 
 }
