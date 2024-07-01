@@ -228,8 +228,9 @@ public class ControleEstacionamento {
 
     public String registarSaida(String placa) {
         for (int i = 0; i < 10; i++) {
-            if (est.verificarPlaca(placa) != null && est.verificarPlaca(placa).equals("1")) {
-                if (est.getVagas(i).getCarroPlaca() != null && est.getVagas(i).getCarroPlaca().equals(placa)) {
+            if (est.verificarPlaca(placa) != null) {
+                if (est.getVagas(i).getCarroPlaca().equals(placa) || est.getVagas(i).getMoto().getPlaca().equals(placa)
+                        || est.getVagas(i).getCaminhonete().getPlaca().equals(placa)) {
                     est.getVagas(i).liberarVaga();
                     return "OK"; // Retorna "OK" se a placa for encontrada e a vaga for liberada
                 }
