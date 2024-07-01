@@ -1,4 +1,5 @@
 package br.edu.up.util;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -108,7 +109,7 @@ public class Prompt {
 	 * 
 	 * @return double
 	 */
-	public static double lerDecimal(String mensagem) {
+	public static String lerDecimal(String mensagem) {
 		imprimir(mensagem);
 		return lerDecimal();
 	}
@@ -141,6 +142,6 @@ public class Prompt {
 		lerLinha();
 	}
 
-    public class lerInteiro {
-    }
+	public class lerInteiro {
+	}
 }
