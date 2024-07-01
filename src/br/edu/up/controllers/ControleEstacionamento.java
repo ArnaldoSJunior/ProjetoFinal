@@ -106,6 +106,7 @@ public class ControleEstacionamento {
     }
 
     public Caminhonete registrarCaminhoneteMensalista(String modelo, String placa, String cor) {
+
         Caminhonete acharCaminhonete = caminhonetes.stream().filter(x -> x.getPlaca() == placa).findFirst()
                 .orElse(null);
         if (acharCaminhonete == null) {
