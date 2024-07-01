@@ -31,7 +31,7 @@ public class MenuPrincipal {
                     int tipo = Prompt.lerInteiro("1.Moto 2.Carro 3.Caminhonete 4.Voltar");
 
                     if (tipo == 1) {
-                        Prompt.imprimir("Informe a placa da moto:");
+                        registrarMoto();
 
                     } else if (tipo == 2) {
                         registrarCarro();
