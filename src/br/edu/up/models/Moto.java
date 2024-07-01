@@ -13,4 +13,9 @@ public class Moto extends Veiculo {
                 + ", Cor: " + super.getCor() + " ]";
     }
 
+    public String toCSV() {
+        return getPlaca() + ";" + getModelo() + ";" + getCor();
+    }
+
+
 }
