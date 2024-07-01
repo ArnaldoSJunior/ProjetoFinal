@@ -45,6 +45,12 @@ public class MenuPrincipal {
                     break;
                 case 2:
                     Prompt.imprimir("Informe a placa do veículo!");
+                    String placa = Prompt.lerLinha();
+                    if (ctrlEstacionamento.registarSaida(placa).equals("OK")) {
+                        System.out.println("Retirada de carro realizada com sucesso!!");
+                    } else {
+                        System.out.println("Retirada de carro não realizada!!");
+                    }
 
                     break;
                 case 3:
@@ -64,7 +70,7 @@ public class MenuPrincipal {
                     String telefone = Prompt.lerLinha("Digite o seu telefone: ");
                     System.out.println("--- Incluir Carro de Mensalista ---");
                     String modeloVeiculo = Prompt.lerLinha("Digite o modelo do veículo: ");
-                    String placa = Prompt.lerLinha("Digite o placa do veículo: ");
+                    placa = Prompt.lerLinha("Digite o placa do veículo: ");
                     String cor = Prompt.lerLinha("Digite a cor da veículo: ");
                     if (ctrlEstacionamento.criarMensalista(opcao, nome, cpf, telefone, modeloVeiculo, placa, cor)
                             .equals("ok")) {
@@ -113,7 +119,7 @@ public class MenuPrincipal {
         System.out.println("Programa encerrado");
 
     }
-    
+
     private void registrarMoto() {
 
         Prompt.imprimir("- - - - - -moto- - - - - -");
@@ -122,6 +128,7 @@ public class MenuPrincipal {
         String placa = Prompt.lerLinha("Placa:");
         String cor = Prompt.lerLinha("Cor:");
         if (ctrlEstacionamento.incluirMoto(modelo, placa, cor).equals("ok")) {
+            ctrlEstacionamento.setContEntrada(ctrlEstacionamento.getContEntrada() + 1);
             Prompt.imprimir("Moto estacionada!");
         } else {
             Prompt.imprimir("Não há vagas");
@@ -153,6 +160,7 @@ public class MenuPrincipal {
         String placa = Prompt.lerLinha("Placa:");
         String cor = Prompt.lerLinha("Cor:");
         if (ctrlEstacionamento.incluirCarro(modelo, placa, cor).equals("ok")) {
+            ctrlEstacionamento.setContEntrada(ctrlEstacionamento.getContEntrada() + 1);
             Prompt.imprimir("Carro estacionado!");
         } else {
             Prompt.imprimir("Não há vagas");

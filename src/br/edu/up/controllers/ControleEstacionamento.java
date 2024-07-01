@@ -158,6 +158,7 @@ public class ControleEstacionamento {
         return "null";
 
     }
+
     public String incluirCarro(String modelo, String placa, String cor) {
 
         int vaga = est.encontrarVagaDisponivel();
@@ -224,5 +225,18 @@ public class ControleEstacionamento {
     // }
     // return true;
     // }
+
+    public String registarSaida(String placa) {
+        for (int i = 0; i < 10; i++) {
+            if (est.verificarPlaca(placa) != null && est.verificarPlaca(placa).equals("1")) {
+                if (est.getVagas(i).getCarroPlaca() != null && est.getVagas(i).getCarroPlaca().equals(placa)) {
+                    est.getVagas(i).liberarVaga();
+                    return "OK"; // Retorna "OK" se a placa for encontrada e a vaga for liberada
+                }
+            }
+        }
+        return "OFF"; // Retorna "OFF" se a placa não for encontrada ou se a vaga não estiver ocupada
+                      // por esse veículo
+    }
 
 }
